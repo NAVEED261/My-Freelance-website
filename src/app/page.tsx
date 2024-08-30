@@ -8,6 +8,7 @@ export default function Home() {
     <div className="home-container">
       <Header />
       <main className="main-content">
+      <HeroSection />
         <h1>Welcome to Fatima Zehra StenoWeb Dynamics</h1>
         <p>Your Partner in Innovative Web Solutions and Automation Services</p>
         <div className="service-grid">
@@ -31,7 +32,7 @@ export default function Home() {
           </div>
         </div>
         <button className="cta-button">Get in Touch</button>
-        <HeroSection />
+        {/* <HeroSection /> */}
       </main>
       <Footer />
 
