@@ -50,7 +50,7 @@ export default function UIUXDesign() {
           </Heading>
           <Text>
             Our approach to UI/UX design is centered around the user. We believe that great design is about more than just aesthetics—
-            it's about creating a meaningful and intuitive experience for your users. Here’s why we stand out:
+            its about creating a meaningful and intuitive experience for your users. Heres why we stand out:
           </Text>
           <UnorderedList spacing={3} pl={5} mt={3}>
             <ListItem>
@@ -75,7 +75,7 @@ export default function UIUXDesign() {
             Our Process
           </Heading>
           <Text>
-            Our UI/UX design process is thorough and designed to deliver the best results. Here’s how we do it:
+            Our UI/UX design process is thorough and designed to deliver the best results. Heres how we do it:
           </Text>
           <UnorderedList spacing={3} pl={5} mt={3}>
             <ListItem>

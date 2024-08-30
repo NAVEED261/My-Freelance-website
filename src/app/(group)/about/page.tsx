@@ -43,7 +43,7 @@ export default function About() {
         <Box bg="white" p={8} borderRadius="md" boxShadow="lg" w="full" _hover={{ boxShadow: "xl", transform: "translateY(-5px)" }} transition="all 0.3s ease">
           <Heading as="h2" size="lg" color={headingColor} mb={4}>Our Services</Heading>
           <Text fontSize="lg" lineHeight="tall" mb={4}>
-            We specialize in delivering a wide range of services that cater to your unique needs. Whether you're looking to build a brand-new website or enhance your existing one, our team of experts is here to assist you every step of the way. Here's what we offer:
+            We specialize in delivering a wide range of services that cater to your unique needs. Whether youre looking to build a brand-new website or enhance your existing one, our team of experts is here to assist you every step of the way. Heres what we offer:
           </Text>
           <VStack align="start" spacing={3} pl={5}>
             <Text as="li"><strong>Website Development:</strong> Creating responsive, user-friendly websites tailored to your business needs, ensuring a seamless experience across all devices.</Text>

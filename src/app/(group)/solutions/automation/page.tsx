@@ -50,7 +50,7 @@ export default function Automation() {
           </Heading>
           <Text>
             Our automation services are designed to help you achieve greater efficiency and accuracy in your business operations.
-            Here's why you should choose us for your automation needs:
+            Heres why you should choose us for your automation needs:
           </Text>
           <UnorderedList spacing={3} pl={5} mt={3}>
             <ListItem>
@@ -75,7 +75,7 @@ export default function Automation() {
             Our Process
           </Heading>
           <Text>
-            Our automation process is designed to deliver seamless and effective solutions. Here's how we work:
+            Our automation process is designed to deliver seamless and effective solutions. Heres how we work:
           </Text>
           <UnorderedList spacing={3} pl={5} mt={3}>
             <ListItem>

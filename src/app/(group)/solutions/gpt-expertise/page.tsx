@@ -50,7 +50,7 @@ export default function GPTExpertise() {
           </Heading>
           <Text>
             Our deep understanding of Generative AI technologies enables us to deliver cutting-edge solutions tailored to your needs. 
-            Here's why you should work with us:
+            Here why you should work with us:
           </Text>
           <UnorderedList spacing={3} pl={5} mt={3}>
             <ListItem>
@@ -78,7 +78,7 @@ export default function GPTExpertise() {
             Our Process
           </Heading>
           <Text>
-            Our GPT expertise process is designed to deliver high-quality AI solutions. Here’s how we do it:
+            Our GPT expertise process is designed to deliver high-quality AI solutions. Heres how we do it:
           </Text>
           <UnorderedList spacing={3} pl={5} mt={3}>
             <ListItem>

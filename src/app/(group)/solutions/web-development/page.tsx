@@ -50,7 +50,7 @@ export default function WebDevelopment() {
             Why Choose Our Web Development Services?
           </Heading>
           <Text>
-            Our web development services are designed to provide you with a website that is not only visually appealing but also functional and scalable. Here’s why we stand out:
+            Our web development services are designed to provide you with a website that is not only visually appealing but also functional and scalable. Heres why we stand out:
           </Text>
           <UnorderedList spacing={3} pl={5} mt={3}>
             <ListItem>

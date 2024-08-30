@@ -14,7 +14,7 @@ export default function Home() {
           <div className="service-item">
             <h2>Web Development</h2>
             <p>
-              We create responsive, modern websites that help your business grow. From concept to launch, we've got you covered.
+              We create responsive, modern websites that help your business grow. From concept to launch, we have  got you covered.
             </p>
           </div>
           <div className="service-item">

@@ -50,7 +50,7 @@ export default function Stenography() {
           </Heading>
           <Text>
             Our stenography services are tailored to meet the diverse needs of our clients, ensuring accuracy and efficiency in every task.
-            Here's why you should trust us with your transcription needs:
+            Heres why you should trust us with your transcription needs:
           </Text>
           <UnorderedList spacing={3} pl={5} mt={3}>
             <ListItem>
@@ -78,7 +78,7 @@ export default function Stenography() {
             Our Process
           </Heading>
           <Text>
-            Our stenography process is designed to provide seamless and precise transcription services. Here’s how we work:
+            Our stenography process is designed to provide seamless and precise transcription services. Heres how we work:
           </Text>
           <UnorderedList spacing={3} pl={5} mt={3}>
             <ListItem>
