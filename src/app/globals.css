@@ -2,32 +2,52 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Defining custom color variables */
 :root {
   --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --background-start-rgb: 214, 219, 220; /* Light grayish color */
+  --background-end-rgb: 255, 255, 255; /* White color */
 }
 
+/* Dark mode preferences */
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
+    --foreground-rgb: 255, 255, 255; /* White text in dark mode */
+    --background-start-rgb: 0, 0, 0; /* Dark background */
     --background-end-rgb: 0, 0, 0;
   }
 }
 
+/* Body styling */
 body {
-  color: rgb(var(--foreground-rgb));
+  color: rgb(var(--foreground-rgb)); /* Text color changes with theme */
   background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+    to bottom,
+    transparent,
+    rgb(var(--background-end-rgb))
+  ) rgb(var(--background-start-rgb)); /* Smooth gradient */
 }
 
+/* Additional Utility Layer */
 @layer utilities {
   .text-balance {
-    text-wrap: balance;
+    text-wrap: balance; /* CSS property for balanced text wrapping */
+  }
+
+  /* Custom utility to add text shadow */
+  .text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Light shadow for text */
+  }
+
+  /* Smooth transition utility for hover effects */
+  .transition-smooth {
+    transition: all 0.3s ease-in-out;
+  }
+}
+
+/* Responsive styling for body padding */
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
   }
 }
