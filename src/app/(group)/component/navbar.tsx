@@ -22,15 +22,27 @@ export default function Header() {
   return (
     <header>
       <nav>
+        {/* Logo on the Left Side */}
         <div className="logo">
           <Link href="/">
             <img
               src="/33b8eb36-7cee-4fcd-8875-33bdba455ba5.webp"
-              alt="FZ Dynamics Logo"
+              alt="Fatima Zehra Logo"
               className="logo-img"
             />
           </Link>
         </div>
+
+        {/* Centered Prayer Image */}
+        <div className="center-prayer">
+          <img
+            src="/bismillah-calligraphy-vector-meaning-gold-600nw-2003130938.webp"
+            alt="Bismillah Calligraphy"
+            className="prayer-img"
+          />
+        </div>
+
+        {/* Navigation Links on the Right Side */}
         <div className={`menu ${isOpen ? "open" : ""}`}>
           <ul>
             <li>
@@ -64,6 +76,12 @@ export default function Header() {
                   <li>
                     <Link href="/solutions/stenography">Stenography</Link>
                   </li>
+                  <li>
+                    <Link href="/solutions/economics-research">Economics Research</Link>
+                  </li>
+                  <li>
+                    <Link href="/solutions/mda">Malir Development Authority</Link>
+                  </li>
                 </ul>
               )}
             </li>
@@ -75,6 +93,7 @@ export default function Header() {
             </li>
           </ul>
         </div>
+
         <div className="menu-toggle" onClick={toggleMenu}>
           <span></span>
           <span></span>
@@ -84,29 +103,46 @@ export default function Header() {
 
       <style jsx>{`
         header {
-          background-color: #4CAF50;
+          background-color: #1e3a8a;
           color: white;
-          padding: 20px 30px;
-          box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+          padding: 20px 40px;
+          margin: 20px;
+          border-radius: 50px; /* Circle-like shape for the navbar */
+          box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
           position: sticky;
           top: 0;
-          width: 100%;
+          width: calc(100% - 40px); /* Adjust width for margin */
           z-index: 1000;
         }
         nav {
           display: flex;
-          justify-content: space-between;
           align-items: center;
+          justify-content: space-between;
           max-width: 1400px;
           margin: 0 auto;
         }
+        .logo {
+          flex: 1;
+          display: flex;
+          justify-content: flex-start;
+        }
         .logo-img {
-          height: 50px;
+          height: 100px; /* Increased logo height */
+          cursor: pointer;
+        }
+        .center-prayer {
+          flex: 1.5; /* Giving more space to the prayer image */
+          text-align: center;
+        }
+        .prayer-img {
+          width: 100%; /* Significantly increased the width */
+          max-width: 700px; /* Limit the maximum width to keep it under control */
+          object-fit: contain;
         }
         .menu {
           display: flex;
-          justify-content: center;
-          flex-grow: 1;
+          justify-content: flex-end;
+          flex: 1;
         }
         .menu ul {
           display: flex;
@@ -121,14 +157,16 @@ export default function Header() {
         .menu ul li a {
           color: #f3f4f6;
           text-decoration: none;
-          font-size: 1.3em;
-          padding: 12px 20px;
+          font-size: 1.8em; /* Larger font size for better visibility */
+          font-weight: bold;
+          padding: 20px 25px; /* Increased padding for a larger clickable area */
           transition: background-color 0.3s ease, color 0.3s ease;
-          border-radius: 8px;
+          border-radius: 12px;
         }
         .menu ul li a:hover {
           background-color: #2563eb;
           color: #ffffff;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
         .dropdown-menu {
           display: none;
@@ -140,17 +178,18 @@ export default function Header() {
           padding: 10px 0;
           margin: 0;
           box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-          border-radius: 8px;
+          border-radius: 12px;
+          width: 250px; /* Increased dropdown menu width */
         }
         .dropdown-menu li {
           margin: 0;
         }
         .dropdown-menu li a {
           display: block;
-          padding: 12px 20px;
+          padding: 15px 25px; /* Increased padding for dropdown items */
           color: #e2e8f0;
           text-decoration: none;
-          font-size: 1.1em;
+          font-size: 1.4em; /* Larger dropdown text */
           transition: background-color 0.3s ease;
         }
         .dropdown-menu li a:hover {
@@ -178,10 +217,10 @@ export default function Header() {
             display: ${isOpen ? "flex" : "none"};
             flex-direction: column;
             position: absolute;
-            top: 80px;
-            left: 0;
+            top: 100px;
+            right: 0;
             width: 100%;
-            background-color: #4CAF50;
+            background-color: #1e3a8a;
             padding: 20px 0;
             z-index: 999;
           }
@@ -194,6 +233,9 @@ export default function Header() {
           }
           .menu-toggle {
             display: flex;
+          }
+          .center-prayer {
+            display: none;
           }
         }
       `}</style>

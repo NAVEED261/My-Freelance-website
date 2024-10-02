@@ -1,6 +1,7 @@
 "use client";
 import React from 'react';
 import { Box, Heading, Text, UnorderedList, ListItem, VStack, Divider, useColorModeValue } from "@chakra-ui/react";
+import Header from '../../component/navbar';
 
 export default function GPTExpertise() {
   const bgColor = useColorModeValue("gray.50", "gray.800");
@@ -20,6 +21,7 @@ export default function GPTExpertise() {
       mx="auto"
       mt={10}
     >
+      <Header/>
       <Heading as="h1" size="2xl" color={headingColor} mb={5} textAlign="center">
         GPT Expertise
       </Heading>

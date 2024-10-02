@@ -1,101 +1,237 @@
 "use client";
-import React from 'react';
-import { Box, Heading, Text, UnorderedList, ListItem, VStack, Divider, useColorModeValue } from "@chakra-ui/react";
 
-export default function UIUXDesign() {
-  const bgColor = useColorModeValue("gray.50", "gray.800");
-  const textColor = useColorModeValue("gray.700", "gray.100");
-  const headingColor = useColorModeValue("blue.700", "blue.300");
+import Link from "next/link";
+import { useState } from "react";
+
+export default function Header() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const handleMouseEnter = () => {
+    setDropdownOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    setDropdownOpen(false);
+  };
 
   return (
-    <Box
-      bg={bgColor}
-      color={textColor}
-      p={10}
-      borderRadius="md"
-      boxShadow="lg"
-      transition="all 0.3s"
-      _hover={{ boxShadow: "xl", transform: "scale(1.02)" }}
-      maxW="900px"
-      mx="auto"
-      mt={10}
-    >
-      <Heading as="h1" size="2xl" color={headingColor} mb={5} textAlign="center">
-        UI/UX Design Services
-      </Heading>
-      <Text fontSize="lg" mb={10} textAlign="center">
-        Our team of experts crafts visually appealing and user-friendly interfaces that deliver a seamless user experience.
-        We blend creativity with technical expertise to create designs that not only look great but also function flawlessly.
-      </Text>
+    <header>
+      <nav>
+        {/* Logo on the Left Side */}
+        <div className="logo">
+          <Link href="/">
+            <img
+              src="/33b8eb36-7cee-4fcd-8875-33bdba455ba5.webp"
+              alt="FZ Dynamics Logo"
+              className=""
+            />
+          </Link>
+        </div>
 
-      <VStack align="start" spacing={8}>
-        <Box>
-          <Heading as="h2" size="lg" mb={3} color={headingColor}>
-            What We Offer
-          </Heading>
-          <UnorderedList spacing={3} pl={5}>
-            <ListItem>User Research and Analysis</ListItem>
-            <ListItem>Wireframing and Prototyping</ListItem>
-            <ListItem>Visual Design</ListItem>
-            <ListItem>User Testing and Feedback</ListItem>
-            <ListItem>Interaction Design</ListItem>
-          </UnorderedList>
-        </Box>
+        {/* Centered Prayer Image */}
+        <div className="center-prayer">
+          <img
+            src="/path/to/your/prayer-image.jpg"
+            alt="Prayer"
+            className="prayer-img"
+          />
+        </div>
 
-        <Divider borderColor={headingColor} />
+        {/* Navigation Links on the Right Side */}
+        <div className={`menu ${isOpen ? "open" : ""}`}>
+          <ul>
+            <li>
+              <Link href="/">Home</Link>
+            </li>
+            <li
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+              className="solutions-menu"
+            >
+              <Link href="/solutions">Solutions</Link>
+              {dropdownOpen && (
+                <ul className="dropdown-menu">
+                  <li>
+                    <Link href="/solutions/web-development">Web Development</Link>
+                  </li>
+                  <li>
+                    <Link href="/solutions/ui-ux-design">UI/UX Design</Link>
+                  </li>
+                  <li>
+                    <Link href="/solutions/automation">Automation Solutions</Link>
+                  </li>
+                  <li>
+                    <Link href="/solutions/full-stack-development">
+                      Full-Stack Development
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/solutions/gpt-expertise">GPT Expertise</Link>
+                  </li>
+                  <li>
+                    <Link href="/solutions/stenography">Stenography</Link>
+                  </li>
+                  <li>
+                    <Link href="/solutions/economics-research">Economics Research</Link>
+                  </li>
+                  <li>
+                    <Link href="/solutions/mda">Malir Development Authority</Link>
+                  </li>
+                </ul>
+              )}
+            </li>
+            <li>
+              <Link href="/about">About</Link>
+            </li>
+            <li>
+              <Link href="/contact">Contact</Link>
+            </li>
+          </ul>
+        </div>
 
-        <Box>
-          <Heading as="h2" size="lg" mb={3} color={headingColor}>
-            Why Choose Us?
-          </Heading>
-          <Text>
-            Our approach to UI/UX design is centered around the user. We believe that great design is about more than just aesthetics—
-            its about creating a meaningful and intuitive experience for your users. Heres why we stand out:
-          </Text>
-          <UnorderedList spacing={3} pl={5} mt={3}>
-            <ListItem>
-              <Text as="span" fontWeight="bold">User-Centric Design:</Text> We prioritize the needs and behaviors of your users in every design decision.
-            </ListItem>
-            <ListItem>
-              <Text as="span" fontWeight="bold">Expertise in Latest Tools:</Text> Our team is proficient in the latest design tools and technologies, ensuring that your project is cutting-edge.
-            </ListItem>
-            <ListItem>
-              <Text as="span" fontWeight="bold">Collaborative Approach:</Text> We work closely with your team to ensure that our designs align with your brand vision and goals.
-            </ListItem>
-            <ListItem>
-              <Text as="span" fontWeight="bold">Iterative Design Process:</Text> We believe in constant improvement and iterate on designs based on user feedback and testing.
-            </ListItem>
-          </UnorderedList>
-        </Box>
+        <div className="menu-toggle" onClick={toggleMenu}>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </nav>
 
-        <Divider borderColor={headingColor} />
-
-        <Box>
-          <Heading as="h2" size="lg" mb={3} color={headingColor}>
-            Our Process
-          </Heading>
-          <Text>
-            Our UI/UX design process is thorough and designed to deliver the best results. Heres how we do it:
-          </Text>
-          <UnorderedList spacing={3} pl={5} mt={3}>
-            <ListItem>
-              <Text as="span" fontWeight="bold">Discovery & Research:</Text> We start by understanding your business goals, target audience, and user needs.
-            </ListItem>
-            <ListItem>
-              <Text as="span" fontWeight="bold">Wireframing & Prototyping:</Text> We create wireframes and prototypes to visualize the structure and flow of your application.
-            </ListItem>
-            <ListItem>
-              <Text as="span" fontWeight="bold">Design & Development:</Text> Our designers craft beautiful interfaces while our developers ensure they are responsive and functional.
-            </ListItem>
-            <ListItem>
-              <Text as="span" fontWeight="bold">Testing & Validation:</Text> We conduct user testing to gather feedback and refine the design for the best user experience.
-            </ListItem>
-            <ListItem>
-              <Text as="span" fontWeight="bold">Launch & Support:</Text> After launch, we provide ongoing support to ensure your application continues to deliver a great user experience.
-            </ListItem>
-          </UnorderedList>
-        </Box>
-      </VStack>
-    </Box>
+      <style jsx>{`
+        header {
+          background-color: #4caf50;
+          color: white;
+          padding: 20px 30px;
+          box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+          position: sticky;
+          top: 0;
+          width: 100%;
+          z-index: 1000;
+        }
+        nav {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          max-width: 1400px;
+          margin: 0 auto;
+        }
+        .logo {
+          flex: 1;
+          display: flex;
+          justify-content: flex-start;
+        }
+        .logo-img {
+          height: 50px;
+        }
+        .center-prayer {
+          flex: 1;
+          text-align: center;
+        }
+        .prayer-img {
+          height: 60px; /* Adjust as necessary */
+          max-width: 100%;
+        }
+        .menu {
+          display: flex;
+          justify-content: flex-end;
+          flex: 1;
+        }
+        .menu ul {
+          display: flex;
+          list-style: none;
+          margin: 0;
+          padding: 0;
+        }
+        .menu ul li {
+          margin-left: 40px;
+          position: relative;
+        }
+        .menu ul li a {
+          color: #f3f4f6;
+          text-decoration: none;
+          font-size: 1.3em;
+          padding: 12px 20px;
+          transition: background-color 0.3s ease, color 0.3s ease;
+          border-radius: 8px;
+        }
+        .menu ul li a:hover {
+          background-color: #2563eb;
+          color: #ffffff;
+        }
+        .dropdown-menu {
+          display: none;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          background: #1f2937;
+          list-style: none;
+          padding: 10px 0;
+          margin: 0;
+          box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+          border-radius: 8px;
+        }
+        .dropdown-menu li {
+          margin: 0;
+        }
+        .dropdown-menu li a {
+          display: block;
+          padding: 12px 20px;
+          color: #e2e8f0;
+          text-decoration: none;
+          font-size: 1.1em;
+          transition: background-color 0.3s ease;
+        }
+        .dropdown-menu li a:hover {
+          background-color: #2563eb;
+          color: #ffffff;
+          border-radius: 5px;
+        }
+        .solutions-menu:hover .dropdown-menu {
+          display: block;
+        }
+        .menu-toggle {
+          display: none;
+          flex-direction: column;
+          cursor: pointer;
+        }
+        .menu-toggle span {
+          background: #e2e8f0;
+          border-radius: 2px;
+          height: 4px;
+          margin: 4px 0;
+          width: 30px;
+        }
+        @media (max-width: 768px) {
+          .menu {
+            display: ${isOpen ? "flex" : "none"};
+            flex-direction: column;
+            position: absolute;
+            top: 80px;
+            left: 0;
+            width: 100%;
+            background-color: #4caf50;
+            padding: 20px 0;
+            z-index: 999;
+          }
+          .menu ul {
+            flex-direction: column;
+            align-items: center;
+          }
+          .menu ul li {
+            margin: 15px 0;
+          }
+          .menu-toggle {
+            display: flex;
+          }
+          .center-prayer {
+            display: none;
+          }
+        }
+      `}</style>
+    </header>
   );
 }

@@ -2,6 +2,7 @@
 import React from 'react';
 import Header from '../component/navbar';
 import { Box, Heading, Text, VStack, Divider, Input, Textarea, Button, useColorModeValue } from "@chakra-ui/react";
+import Footer from '../component/footer';
 
 export default function Contact() {
   const bgColor = useColorModeValue("gray.50", "gray.800");
@@ -59,9 +60,9 @@ export default function Contact() {
               <strong>Phone:</strong> 0300-2385209, 0332-3426523
             </Text>
             <Text mt={5}>
-              <strong>Apply for Job:</strong>{" "}
-              <a href="https://forms.gle/kSgthT2gdsQNq4s7A" target="_blank" rel="noopener noreferrer" style={{ color: headingColor, textDecoration: 'underline' }}>
-                Fill out our job application form here
+              <strong>Apply for Services:</strong>{" "}
+              <a href="https://forms.gle/XLxpqZ6KqVhEyqAe7" target="_blank" rel="noopener noreferrer" style={{ color: headingColor, textDecoration: 'underline' }}>
+                Fill out this form
               </a>
             </Text>
           </VStack>
@@ -154,6 +155,7 @@ export default function Contact() {
           </form>
         </Box>
       </VStack>
+      <Footer/>
     </Box>
   );
 }

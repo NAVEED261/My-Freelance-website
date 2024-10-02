@@ -1,4 +1,6 @@
 "use client";
+import React from 'react';
+import Link from 'next/link';
 import HeroSection from './(group)/HeroSection/page';
 import Header from './(group)/component/navbar';
 import Footer from './(group)/component/footer';
@@ -22,22 +24,24 @@ export default function Home() {
         <HeroSection />
         <h1>Welcome to Fatima Zehra StenoWeb Dynamics</h1>
         <p>Your Partner in Innovative Web Solutions and Automation Services</p>
+
+        {/* Service Grid */}
         <div className="service-grid">
-          <div className="service-item">
-            <h2>Web Development</h2>
-            <p>We create responsive, modern websites that help your business grow. From concept to launch, weve got you covered.</p>
-          </div>
-          <div className="service-item">
-            <h2>UI/UX Design</h2>
-            <p>Crafting visually appealing and user-friendly interfaces that deliver a seamless experience to your users.</p>
-          </div>
-          <div className="service-item">
-            <h2>Automation Services</h2>
-            <p>Streamlining your business processes with custom automation solutions using tools like Google Sheets and Zapier.</p>
-          </div>
+          {services.map((service, index) => (
+            <Link key={service.title} href={service.link} passHref>
+              <div
+                className={`service-item ${index % 2 === 0 ? 'left' : 'right'}`}
+              >
+                <h2>{service.title}</h2>
+                <p>{service.description}</p>
+              </div>
+            </Link>
+          ))}
         </div>
-        <button className="cta-button">Get in Touch</button>
+
+        {/* <button className="cta-button">Get in Touch</button>/ */}
       </main>
+
       <Statistics />
       <Source />
       <Footer />
@@ -93,17 +97,12 @@ export default function Home() {
         }
 
         .service-grid {
-          display: flex;
-          flex-direction: column;
-          gap: 30px;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 40px;
+          margin-top: 40px;
           margin-bottom: 40px;
-        }
-
-        @media (min-width: 768px) {
-          .service-grid {
-            flex-direction: row;
-            justify-content: space-between;
-          }
+          text-align: left;
         }
 
         .service-item {
@@ -112,6 +111,15 @@ export default function Home() {
           border-radius: 15px;
           box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
           transition: transform 0.3s ease, box-shadow 0.3s ease;
+          cursor: pointer;
+        }
+
+        .service-item.left {
+          margin-left: 0;
+        }
+
+        .service-item.right {
+          margin-right: 0;
         }
 
         .service-item:hover {
@@ -120,7 +128,7 @@ export default function Home() {
         }
 
         .service-item h2 {
-          font-size: 2em;
+          font-size: 1.8em;
           margin-bottom: 15px;
           color: #2563eb;
           font-weight: 600;
@@ -142,7 +150,56 @@ export default function Home() {
           background-color: #1e40af;
           transform: translateY(-5px);
         }
+
+        @media (max-width: 768px) {
+          .service-grid {
+            grid-template-columns: 1fr;
+          }
+        }
       `}</style>
     </div>
   );
 }
+
+const services = [
+  {
+    title: 'Web Development',
+    description: 'We create responsive, modern websites that help your business grow. From concept to launch, we\'ve got you covered.',
+    link: '/solutions/web-development',
+  },
+  {
+    title: 'UI/UX Design',
+    description: 'Crafting visually appealing and user-friendly interfaces that deliver a seamless experience to your users.',
+    link: '/solutions/ui-ux-design',
+  },
+  {
+    title: 'Automation Services',
+    description: 'Streamlining your business processes with custom automation solutions using tools like Google Sheets and Zapier.',
+    link: '/solutions/automation',
+  },
+  {
+    title: 'Full-Stack Development',
+    description: 'Comprehensive full-stack solutions using the latest technologies for end-to-end development.',
+    link: '/solutions/full-stack-development',
+  },
+  {
+    title: 'GPT Expertise',
+    description: 'Leveraging the power of GPT models for creating advanced AI-driven solutions tailored to your business needs.',
+    link: '/solutions/gpt-expertise',
+  },
+  {
+    title: 'Stenography',
+    description: 'Providing stenography solutions for swift and efficient documentation, tailored to your specific requirements.',
+    link: '/solutions/stenography',
+  },
+  {
+    title: 'Economics Research',
+    description: 'In-depth economic research and analysis to help businesses make informed decisions. From market trends to policy impact assessments, we\'ve got you covered.',
+    link: '/solutions/economics-research',
+  },
+  {
+    title: 'Malir Development Authority (MDA) Documentation',
+    description: 'Comprehensive documentation services for all public housing schemes under Malir Development Authority, including allotment, transfer, mutation, and more.',
+    link: '/solutions/mda',
+  },
+];
