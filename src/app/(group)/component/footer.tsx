@@ -1,11 +1,18 @@
-'use client';
+"use client";
 
 export default function Footer() {
   return (
     <footer className="footer">
       <div className="container mx-auto py-8 px-5 flex items-center sm:flex-row flex-col">
         <a href="/" className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
-          <img src="/33b8eb36-7cee-4fcd-8875-33bdba455ba5.webp" alt="FZ Dynamics Logo" className="logo-img" />
+          {/* Updated Logo with Fatima Zehra Logo */}
+          <div className="logo-container-footer">
+            <img
+              src="/images/Screenshot 2024-10-06 231809.png"
+              alt="Fatima Zehra Logo"
+              className="logo-img"
+            />
+          </div>
           <span className="ml-3 text-xl text-sky-800">FZ StenoWeb Dynamics</span>
         </a>
         <p className="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">
@@ -82,11 +89,20 @@ export default function Footer() {
         .footer {
           background-color: #1f2937;
           color: #fff;
+          padding: 20px 0; /* Added padding for more spacing in the footer */
+        }
+        .logo-container-footer {
+          position: relative;
+          display: inline-block;
+          transition: transform 1s ease;
+          transform-style: preserve-3d;
         }
         .logo-img {
-          height: 40px;
-          width: auto;
-          border-radius: 5px;
+          height: 60px; /* Increased size for better visibility in footer */
+          width: 60px;
+          border-radius: 50%;
+          object-fit: cover;
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Shadow for better visual depth */
         }
         .footer a {
           text-decoration: none;

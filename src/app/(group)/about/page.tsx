@@ -27,7 +27,16 @@ export default function About() {
             <Text fontSize="lg" lineHeight="tall">
               As the CEO of Fatima Zehra StenoWeb Dynamics, I am proud to lead a team of talented professionals who are passionate about creating cutting-edge web solutions. Our commitment to excellence drives us to continuously innovate and deliver the highest quality services to our clients. We believe in the power of collaboration, and our goal is to empower your business with the tools and strategies needed to thrive in the digital landscape. Thank you for choosing Fatima Zehra StenoWeb Dynamics as your trusted partner.
             </Text>
-            <Text fontSize="lg" fontWeight="bold" color="blue.600" mt={4}>- Hafiz Naveed Uddin, CEO</Text>
+            <Box display="flex" alignItems="center" mt={4}>
+              <Text fontSize="lg" fontWeight="bold" color="blue.600">- Hafiz Naveed Uddin, CEO</Text>
+              <Image
+                src="images/Screenshot 2024-10-07 004729.png" // Replace with your signature image path
+                alt="CEO Signature"
+                boxSize="100px"
+                ml={4}
+                objectFit="contain"
+              />
+            </Box>
           </Box>
         </Box>
 
@@ -43,7 +52,7 @@ export default function About() {
         <Box bg="white" p={8} borderRadius="md" boxShadow="lg" w="full" _hover={{ boxShadow: "xl", transform: "translateY(-5px)" }} transition="all 0.3s ease">
           <Heading as="h2" size="lg" color={headingColor} mb={4}>Our Services</Heading>
           <Text fontSize="lg" lineHeight="tall" mb={4}>
-            We specialize in delivering a wide range of services that cater to your unique needs. Whether youre looking to build a brand-new website or enhance your existing one, our team of experts is here to assist you every step of the way. Heres what we offer:
+            We specialize in delivering a wide range of services that cater to your unique needs. Whether youa re looking to build a brand-new website or enhance your existing one, our team of experts is here to assist you every step of the way. Here is what we offer:
           </Text>
           <VStack align="start" spacing={3} pl={5}>
             <Text as="li"><strong>Website Development:</strong> Creating responsive, user-friendly websites tailored to your business needs, ensuring a seamless experience across all devices.</Text>

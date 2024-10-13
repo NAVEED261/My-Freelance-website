@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import React, { useEffect, useState } from 'react';
 
@@ -29,11 +29,11 @@ export default function HeroSection() {
     <div className="hero-container">
       <div className="hero-item">
         <img src={images[currentIndex]} alt="Sliding Images" />
-        <div className="overlay">
+        {/* <div className="overlay">
           <h1 className="headline">Discover the Future of Web Development</h1>
           <p className="subtext">Innovation, Automation, and Design at Your Fingertips</p>
           <button className="cta-button">Learn More</button>
-        </div>
+        </div> */}
       </div>
 
       <style jsx>{`
@@ -71,15 +71,25 @@ export default function HeroSection() {
           transform: translate(-50%, -50%);
           text-align: center;
           color: white;
+          background: rgba(0, 0, 0, 0.5); /* Semi-transparent black background to enhance text visibility */
+          padding: 20px;
+          border-radius: 15px;
         }
         .headline {
           font-size: 3em;
           animation: fadeIn 2s ease-in-out;
+          color: #ffb703; /* Changed to yellowish color for better contrast */
+          text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Adding shadow to make it more readable */
+          background: linear-gradient(90deg, #ffb703, #fd6e02);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
         }
         .subtext {
           font-size: 1.5em;
           margin-top: 10px;
           animation: fadeIn 3s ease-in-out;
+          color: #ffd166; /* Lighter yellow for subtext */
+          text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7); /* Adding shadow to enhance readability */
         }
         .cta-button {
           background-color: #2563eb;
@@ -90,14 +100,38 @@ export default function HeroSection() {
           border: none;
           border-radius: 5px;
           cursor: pointer;
-          transition: background-color 0.3s ease;
+          transition: background-color 0.3s ease, transform 0.3s ease;
         }
         .cta-button:hover {
           background-color: #1e40af;
+          transform: translateY(-5px);
         }
         @keyframes fadeIn {
           0% { opacity: 0; transform: translateY(20px); }
           100% { opacity: 1; transform: translateY(0); }
+        }
+        @media (max-width: 768px) {
+          .headline {
+            font-size: 2.5em;
+          }
+          .subtext {
+            font-size: 1.3em;
+          }
+          .cta-button {
+            font-size: 1em;
+            padding: 8px 16px;
+          }
+        }
+        @media (max-width: 480px) {
+          .headline {
+            font-size: 2em;
+          }
+          .subtext {
+            font-size: 1.1em;
+          }
+          .overlay {
+            padding: 15px;
+          }
         }
       `}</style>
     </div>

@@ -4,12 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 
 export default function Header() {
-  const [isOpen, setIsOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
 
   const handleMouseEnter = () => {
     setDropdownOpen(true);
@@ -22,31 +17,41 @@ export default function Header() {
   return (
     <header>
       <nav>
-        {/* Logo on the Left Side */}
-        <div className="logo">
-          <Link href="/">
+        {/* Container to hold logo and Bismillah Image */}
+        <div className="logo-bismillah-container">
+          {/* Logo on the Left Side */}
+          <div className="logo">
+            <Link href="/">
+              <div className="logo-container">
+                <img
+                  src="/images/Screenshot 2024-10-06 231809.png"
+                  alt="Fatima Zehra Logo"
+                  className="logo-img"
+                />
+                <span className="decorator decorator-1"></span>
+                <span className="decorator decorator-2"></span>
+              </div>
+            </Link>
+          </div>
+
+          {/* Bismillah Image in the Center */}
+          <div className="center-prayer">
             <img
-              src="/33b8eb36-7cee-4fcd-8875-33bdba455ba5.webp"
-              alt="Fatima Zehra Logo"
-              className="logo-img"
+              src="/images/Screenshot 2024-10-08 135902.png"
+              alt="Bismillah Calligraphy"
+              className="prayer-img rounded-lg"
             />
-          </Link>
+          </div>
         </div>
 
-        {/* Centered Prayer Image */}
-        <div className="center-prayer">
-          <img
-            src="/bismillah-calligraphy-vector-meaning-gold-600nw-2003130938.webp"
-            alt="Bismillah Calligraphy"
-            className="prayer-img"
-          />
-        </div>
-
-        {/* Navigation Links on the Right Side */}
-        <div className={`menu ${isOpen ? "open" : ""}`}>
+        {/* Navigation Links */}
+        <div className="menu">
           <ul>
             <li>
               <Link href="/">Home</Link>
+            </li>
+            <li>
+              <Link href="/about">About</Link>
             </li>
             <li
               onMouseEnter={handleMouseEnter}
@@ -57,47 +62,36 @@ export default function Header() {
               {dropdownOpen && (
                 <ul className="dropdown-menu">
                   <li>
-                    <Link href="/solutions/web-development">Web Development</Link>
-                  </li>
-                  <li>
-                    <Link href="/solutions/ui-ux-design">UI/UX Design</Link>
-                  </li>
-                  <li>
-                    <Link href="/solutions/automation">Automation Solutions</Link>
-                  </li>
-                  <li>
-                    <Link href="/solutions/full-stack-development">
-                      Full-Stack Development
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/solutions/gpt-expertise">GPT Expertise</Link>
-                  </li>
-                  <li>
-                    <Link href="/solutions/stenography">Stenography</Link>
+                    <Link href="/solutions/automation">Automation</Link>
                   </li>
                   <li>
                     <Link href="/solutions/economics-research">Economics Research</Link>
                   </li>
                   <li>
-                    <Link href="/solutions/mda">Malir Development Authority</Link>
+                    <Link href="/solutions/full-stack-development">Full-Stack Development</Link>
+                  </li>
+                  <li>
+                    <Link href="/solutions/gpt-expertise">GPT Expertise</Link>
+                  </li>
+                  <li>
+                    <Link href="/solutions/mda">Malir Development Authority (MDA)</Link>
+                  </li>
+                  <li>
+                    <Link href="/solutions/stenography">Stenography</Link>
+                  </li>
+                  <li>
+                    <Link href="/solutions/ui-ux-design">UI/UX Design</Link>
+                  </li>
+                  <li>
+                    <Link href="/solutions/web-development">Web Development</Link>
                   </li>
                 </ul>
               )}
             </li>
             <li>
-              <Link href="/about">About</Link>
-            </li>
-            <li>
               <Link href="/contact">Contact</Link>
             </li>
           </ul>
-        </div>
-
-        <div className="menu-toggle" onClick={toggleMenu}>
-          <span></span>
-          <span></span>
-          <span></span>
         </div>
       </nav>
 
@@ -105,13 +99,10 @@ export default function Header() {
         header {
           background-color: #1e3a8a;
           color: white;
-          padding: 20px 40px;
-          margin: 20px;
-          border-radius: 50px; /* Circle-like shape for the navbar */
+          padding: 30px 60px;
           box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
           position: sticky;
           top: 0;
-          width: calc(100% - 40px); /* Adjust width for margin */
           z-index: 1000;
         }
         nav {
@@ -120,24 +111,87 @@ export default function Header() {
           justify-content: space-between;
           max-width: 1400px;
           margin: 0 auto;
+          padding: 0 30px;
+        }
+        .logo-bismillah-container {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          flex: 2;
         }
         .logo {
-          flex: 1;
-          display: flex;
-          justify-content: flex-start;
+          margin-right: 40px;
+        }
+        .logo-container {
+          position: relative;
+          display: inline-block;
+          transition: transform 1s ease;
+          transform-style: preserve-3d;
+          animation: rotateLogo 8s infinite linear;
+        }
+        .logo-container:hover {
+          transform: rotateY(360deg) rotateX(360deg);
+          animation: none;
         }
         .logo-img {
-          height: 100px; /* Increased logo height */
-          cursor: pointer;
+          height: 150px;
+          width: 150px;
+          border-radius: 50%;
+          object-fit: cover;
+          box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+        }
+        .decorator {
+          position: absolute;
+          border-radius: 50%;
+          transition: transform 0.3s ease-in-out;
+        }
+        .decorator-1 {
+          top: -15px;
+          left: -15px;
+          width: 200px;
+          height: 200px;
+          border: 3px solid #ffc107;
+          animation: decorator1Spin 5s infinite linear;
+        }
+        .decorator-2 {
+          bottom: -20px;
+          right: -20px;
+          width: 250px;
+          height: 250px;
+          border: 2px dashed #4ade80;
+          animation: decorator2Spin 7s infinite linear reverse;
         }
         .center-prayer {
-          flex: 1.5; /* Giving more space to the prayer image */
           text-align: center;
+          margin-left: auto;
         }
         .prayer-img {
-          width: 100%; /* Significantly increased the width */
-          max-width: 700px; /* Limit the maximum width to keep it under control */
+          height: 180px;
           object-fit: contain;
+        }
+        @keyframes rotateLogo {
+          0% {
+            transform: rotateY(0deg) rotateX(0deg);
+          }
+          100% {
+            transform: rotateY(360deg) rotateX(360deg);
+          }
+        }
+        @keyframes decorator1Spin {
+          0% {
+            transform: rotate(0deg);
+          }
+          100% {
+            transform: rotate(360deg);
+          }
+        }
+        @keyframes decorator2Spin {
+          0% {
+            transform: rotate(0deg);
+          }
+          100% {
+            transform: rotate(-360deg);
+          }
         }
         .menu {
           display: flex;
@@ -151,25 +205,25 @@ export default function Header() {
           padding: 0;
         }
         .menu ul li {
-          margin-left: 40px;
+          margin-left: 5rem;
           position: relative;
         }
         .menu ul li a {
           color: #f3f4f6;
           text-decoration: none;
-          font-size: 1.8em; /* Larger font size for better visibility */
+          font-size: 1.5em;
           font-weight: bold;
-          padding: 20px 25px; /* Increased padding for a larger clickable area */
-          transition: background-color 0.3s ease, color 0.3s ease;
-          border-radius: 12px;
+          padding: 10px 20px;
+          transition: color 0.3s ease, background-color 0.3s ease;
+          border-radius: 8px;
         }
         .menu ul li a:hover {
           background-color: #2563eb;
           color: #ffffff;
-          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
         .dropdown-menu {
-          display: none;
+          display: flex;
+          flex-direction: column; /* Make dropdown items align vertically */
           position: absolute;
           top: 100%;
           left: 0;
@@ -179,64 +233,23 @@ export default function Header() {
           margin: 0;
           box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
           border-radius: 12px;
-          width: 250px; /* Increased dropdown menu width */
+          width: 220px;
+          z-index: 1000;
         }
         .dropdown-menu li {
-          margin: 0;
+          margin: 5px 0; /* Add some space between dropdown items */
         }
         .dropdown-menu li a {
           display: block;
-          padding: 15px 25px; /* Increased padding for dropdown items */
+          padding: 10px 20px;
           color: #e2e8f0;
           text-decoration: none;
-          font-size: 1.4em; /* Larger dropdown text */
+          font-size: 1.2em;
           transition: background-color 0.3s ease;
         }
         .dropdown-menu li a:hover {
           background-color: #2563eb;
           color: #ffffff;
-          border-radius: 5px;
-        }
-        .solutions-menu:hover .dropdown-menu {
-          display: block;
-        }
-        .menu-toggle {
-          display: none;
-          flex-direction: column;
-          cursor: pointer;
-        }
-        .menu-toggle span {
-          background: #e2e8f0;
-          border-radius: 2px;
-          height: 4px;
-          margin: 4px 0;
-          width: 30px;
-        }
-        @media (max-width: 768px) {
-          .menu {
-            display: ${isOpen ? "flex" : "none"};
-            flex-direction: column;
-            position: absolute;
-            top: 100px;
-            right: 0;
-            width: 100%;
-            background-color: #1e3a8a;
-            padding: 20px 0;
-            z-index: 999;
-          }
-          .menu ul {
-            flex-direction: column;
-            align-items: center;
-          }
-          .menu ul li {
-            margin: 15px 0;
-          }
-          .menu-toggle {
-            display: flex;
-          }
-          .center-prayer {
-            display: none;
-          }
         }
       `}</style>
     </header>

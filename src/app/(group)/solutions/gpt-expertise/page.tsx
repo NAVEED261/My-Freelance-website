@@ -1,106 +1,157 @@
 "use client";
 import React from 'react';
-import { Box, Heading, Text, UnorderedList, ListItem, VStack, Divider, useColorModeValue } from "@chakra-ui/react";
+import {
+  Box,
+  Heading,
+  Text,
+  UnorderedList,
+  ListItem,
+  VStack,
+  Divider,
+  useColorModeValue,
+  ChakraProvider,
+  extendTheme
+} from "@chakra-ui/react";
 import Header from '../../component/navbar';
 
-export default function GPTExpertise() {
-  const bgColor = useColorModeValue("gray.50", "gray.800");
-  const textColor = useColorModeValue("gray.700", "gray.100");
-  const headingColor = useColorModeValue("blue.700", "blue.300");
+export default function MalirDevelopmentAuthority() {
+  // Setting up color mode values for different themes
+  const bgColor = useColorModeValue("linear-gradient(135deg, #f7fafc, #e2e8f0)", "linear-gradient(135deg, #2d3748, #1a202c)");
+  const cardBgColor = useColorModeValue("rgba(255, 255, 255, 0.9)", "rgba(26, 32, 44, 0.85)");
+  const textColor = useColorModeValue("gray.800", "gray.100");
+  const headingColor = useColorModeValue("teal.700", "teal.300");
+  const borderColor = useColorModeValue("teal.600", "teal.400");
 
   return (
-    <Box
-      bg={bgColor}
-      color={textColor}
-      p={10}
-      borderRadius="md"
-      boxShadow="lg"
-      transition="all 0.3s"
-      _hover={{ boxShadow: "xl", transform: "scale(1.02)" }}
-      maxW="900px"
-      mx="auto"
-      mt={10}
-    >
-      <Header/>
-      <Heading as="h1" size="2xl" color={headingColor} mb={5} textAlign="center">
-        GPT Expertise
-      </Heading>
-      <Text fontSize="lg" mb={10} textAlign="center">
-        Leverage our expertise in Generative AI to enhance and automate your business processes. 
-        We specialize in creating custom AI solutions that meet your specific needs and drive innovation.
-      </Text>
+    <ChakraProvider theme={extendTheme()}>
+      <Box bg={bgColor} minH="100vh" pb={20}>
+        <Header />
+        <Box
+          color={textColor}
+          p={{ base: 6, md: 10 }}
+          borderRadius="lg"
+          boxShadow="lg"
+          maxW="1000px"
+          mx="auto"
+          mt={12}
+          bg={cardBgColor}
+          backdropFilter="blur(6px)"
+          transition="all 0.3s"
+          _hover={{ boxShadow: "2xl", transform: "scale(1.03)" }}
+        >
+          <VStack align="start" spacing={8}>
+            {/* Page Header */}
+            <Box
+              bg="teal.900"
+              color="white"
+              p={8}
+              borderRadius="md"
+              textAlign="center"
+              w="full"
+              boxShadow="2xl"
+              _hover={{ boxShadow: "3xl", transform: "translateY(-5px)" }}
+              transition="all 0.3s ease-in-out"
+            >
+              <Heading as="h1" size="2xl">
+                Malir Development Authority Services
+              </Heading>
+            </Box>
 
-      <VStack align="start" spacing={8}>
-        <Box>
-          <Heading as="h2" size="lg" mb={3} color={headingColor}>
-            Our GPT Expertise
-          </Heading>
-          <UnorderedList spacing={3} pl={5}>
-            <ListItem>Custom GPT-3/4 Model Development</ListItem>
-            <ListItem>AI-Driven Content Generation</ListItem>
-            <ListItem>Natural Language Processing (NLP) Solutions</ListItem>
-            <ListItem>AI Chatbot Development</ListItem>
-            <ListItem>Machine Learning Model Training</ListItem>
-          </UnorderedList>
+            {/* Introduction Section */}
+            <Box
+              p={8}
+              borderRadius="md"
+              boxShadow="lg"
+              w="full"
+              _hover={{ boxShadow: "xl", transform: "translateY(-5px)" }}
+              transition="all 0.3s ease-in-out"
+              bg={cardBgColor}
+            >
+              <Text fontSize={{ base: "md", md: "lg" }} mb={8} textAlign="center">
+                We provide comprehensive documentation services for all public housing schemes under the Malir Development Authority (MDA), Sindh Government. Our expert team is here to assist you with various procedures related to property documentation and ensure a smooth and hassle-free experience.
+              </Text>
+            </Box>
+
+            {/* Our Expertise Section */}
+            <Box
+              p={8}
+              borderRadius="md"
+              boxShadow="lg"
+              w="full"
+              _hover={{ boxShadow: "xl", transform: "translateY(-5px)" }}
+              transition="all 0.3s ease-in-out"
+              bg={cardBgColor}
+            >
+              <Heading as="h2" size="lg" mb={4} color={headingColor}>
+                Our MDA Documentation Expertise
+              </Heading>
+              <UnorderedList spacing={4} pl={5}>
+                <ListItem>Property Allotment</ListItem>
+                <ListItem>Transfer of Property</ListItem>
+                <ListItem>Mutation Services</ListItem>
+                <ListItem>Certificate of Transfer (CTC)</ListItem>
+                <ListItem>Sell and Purchase Documentation</ListItem>
+              </UnorderedList>
+            </Box>
+
+            <Divider borderColor={borderColor} />
+
+            {/* Schemes Covered Section */}
+            <Box
+              p={8}
+              borderRadius="md"
+              boxShadow="lg"
+              w="full"
+              _hover={{ boxShadow: "xl", transform: "translateY(-5px)" }}
+              transition="all 0.3s ease-in-out"
+              bg={cardBgColor}
+            >
+              <Heading as="h2" size="lg" mb={4} color={headingColor}>
+                Schemes We Cover
+              </Heading>
+              <UnorderedList spacing={4} pl={5}>
+                <ListItem>Taisor Town Scheme-45</ListItem>
+                <ListItem>New Malir Scheme-1</ListItem>
+                <ListItem>Shah Latif Town Scheme-25</ListItem>
+                <ListItem>New Balloting Plots of T.T 2019</ListItem>
+                <ListItem>Cottages Industry Plots</ListItem>
+                <ListItem>Commercial Plots in All Schemes</ListItem>
+              </UnorderedList>
+            </Box>
+
+            <Divider borderColor={borderColor} />
+
+            {/* Why Choose Us Section */}
+            <Box
+              p={8}
+              borderRadius="md"
+              boxShadow="lg"
+              w="full"
+              _hover={{ boxShadow: "xl", transform: "translateY(-5px)" }}
+              transition="all 0.3s ease-in-out"
+              bg={cardBgColor}
+            >
+              <Heading as="h2" size="lg" mb={4} color={headingColor}>
+                Why Choose Our MDA Services?
+              </Heading>
+              <Text>
+                We provide a unique combination of expert guidance, complete transparency, and a hassle-free experience:
+              </Text>
+              <UnorderedList spacing={4} pl={5} mt={4}>
+                <ListItem>
+                  <Text as="span" fontWeight="bold">Expert Guidance:</Text> With in-depth knowledge of MDA procedures, we provide clear guidance at every step.
+                </ListItem>
+                <ListItem>
+                  <Text as="span" fontWeight="bold">Complete Transparency:</Text> We ensure all documentation and processes are transparent and efficient.
+                </ListItem>
+                <ListItem>
+                  <Text as="span" fontWeight="bold">Hassle-Free Experience:</Text> Our experienced team takes care of the entire documentation process, making it easy for you.
+                </ListItem>
+              </UnorderedList>
+            </Box>
+          </VStack>
         </Box>
-
-        <Divider borderColor={headingColor} />
-
-        <Box>
-          <Heading as="h2" size="lg" mb={3} color={headingColor}>
-            Why Choose Our GPT Expertise?
-          </Heading>
-          <Text>
-            Our deep understanding of Generative AI technologies enables us to deliver cutting-edge solutions tailored to your needs. 
-            Here why you should work with us:
-          </Text>
-          <UnorderedList spacing={3} pl={5} mt={3}>
-            <ListItem>
-              <Text as="span" fontWeight="bold">Custom Solutions:</Text> We build AI models that are tailored to your specific business requirements.
-            </ListItem>
-            <ListItem>
-              <Text as="span" fontWeight="bold">Innovative Approaches:</Text> We stay at the forefront of AI advancements to provide innovative solutions.
-            </ListItem>
-            <ListItem>
-              <Text as="span" fontWeight="bold">Proven Expertise:</Text> Our team has a track record of successful AI implementations across various industries.
-            </ListItem>
-            <ListItem>
-              <Text as="span" fontWeight="bold">End-to-End Support:</Text> From development to deployment, we provide comprehensive support for your AI projects.
-            </ListItem>
-            <ListItem>
-              <Text as="span" fontWeight="bold">Scalable Models:</Text> We design AI models that can scale with your business as it grows.
-            </ListItem>
-          </UnorderedList>
-        </Box>
-
-        <Divider borderColor={headingColor} />
-
-        <Box>
-          <Heading as="h2" size="lg" mb={3} color={headingColor}>
-            Our Process
-          </Heading>
-          <Text>
-            Our GPT expertise process is designed to deliver high-quality AI solutions. Heres how we do it:
-          </Text>
-          <UnorderedList spacing={3} pl={5} mt={3}>
-            <ListItem>
-              <Text as="span" fontWeight="bold">Consultation & Needs Assessment:</Text> We start by understanding your business needs and how AI can best serve them.
-            </ListItem>
-            <ListItem>
-              <Text as="span" fontWeight="bold">Model Design & Development:</Text> We design and develop custom GPT models tailored to your requirements.
-            </ListItem>
-            <ListItem>
-              <Text as="span" fontWeight="bold">Testing & Validation:</Text> We rigorously test our AI models to ensure accuracy and reliability.
-            </ListItem>
-            <ListItem>
-              <Text as="span" fontWeight="bold">Deployment:</Text> We deploy the AI solutions into your existing systems with minimal disruption.
-            </ListItem>
-            <ListItem>
-              <Text as="span" fontWeight="bold">Optimization & Scaling:</Text> We continuously monitor and optimize the models, ensuring they scale effectively with your business.
-            </ListItem>
-          </UnorderedList>
-        </Box>
-      </VStack>
-    </Box>
+      </Box>
+    </ChakraProvider>
   );
 }

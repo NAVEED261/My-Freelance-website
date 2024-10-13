@@ -22,16 +22,16 @@ export default function Home() {
 
       <main className="main-content">
         <HeroSection />
-        <h1>Welcome to Fatima Zehra StenoWeb Dynamics</h1>
-        <p>Your Partner in Innovative Web Solutions and Automation Services</p>
+        <h1><br/><hr/>
+          Welcome to Fatima Zehra StenoWeb Dynamics
+          </h1>
+        <p className="main-description text-color blue-900">Your Partner in Innovative Web Solutions and Automation Services</p>
 
         {/* Service Grid */}
         <div className="service-grid">
           {services.map((service, index) => (
             <Link key={service.title} href={service.link} passHref>
-              <div
-                className={`service-item ${index % 2 === 0 ? 'left' : 'right'}`}
-              >
+              <div className="service-item">
                 <h2>{service.title}</h2>
                 <p>{service.description}</p>
               </div>
@@ -39,7 +39,6 @@ export default function Home() {
           ))}
         </div>
 
-        {/* <button className="cta-button">Get in Touch</button>/ */}
       </main>
 
       <Statistics />
@@ -96,9 +95,15 @@ export default function Home() {
           -webkit-text-fill-color: transparent;
         }
 
+        .main-description {
+          font-size: 1.5em;
+          color: #e2e8f0; /* Updated to a lighter color for better visibility */
+          font-weight: 600;
+        }
+
         .service-grid {
           display: grid;
-          grid-template-columns: 1fr 1fr;
+          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
           gap: 40px;
           margin-top: 40px;
           margin-bottom: 40px;
@@ -112,14 +117,10 @@ export default function Home() {
           box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
           transition: transform 0.3s ease, box-shadow 0.3s ease;
           cursor: pointer;
-        }
-
-        .service-item.left {
-          margin-left: 0;
-        }
-
-        .service-item.right {
-          margin-right: 0;
+          height: 220px; /* Set consistent height for all service boxes */
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
         }
 
         .service-item:hover {
