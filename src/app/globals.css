@@ -28,6 +28,11 @@ body {
   ) rgb(var(--background-start-rgb)); /* Smooth gradient */
 }
 
+/* Tailwind responsive container */
+.container {
+  @apply max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
 /* Additional Utility Layer */
 @layer utilities {
   .text-balance {
