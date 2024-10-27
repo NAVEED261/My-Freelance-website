@@ -106,21 +106,13 @@ export default function Header({ className }) { // Accept className as a prop
           flex: 1; /* Logo on the left */
         }
         .logo-img {
-          height: 100px; /* Increased size */
-          width: 100px; /* Increased size */
+          height: 60px; /* Adjust the size as needed */
+          width: 60px; /* Adjust the size as needed */
           border-radius: 50%; /* Circular logo */
           transition: transform 0.6s ease; /* Animation transition */
         }
         .animated-logo:hover {
-          animation: rotate 2s infinite linear; /* Circular rotation */
-        }
-        @keyframes rotate {
-          0% {
-            transform: rotate(0deg);
-          }
-          100% {
-            transform: rotate(360deg);
-          }
+          transform: rotate(360deg); /* Rotate on hover */
         }
         .center-prayer {
           flex: 2; /* Center image */
