@@ -16,31 +16,25 @@ export default function Header({ className }) { // Accept className as a prop
 
   return (
     <header className={className}> {/* Apply className to header */}
-      <nav>
-        <div className="logo-bismillah-container">
+      <nav className="navbar">
+        <div className="logo-container">
           {/* Logo on the Left Side */}
-          <div className="logo">
-            <Link href="/">
-              <div className="logo-container">
-                <img
-                  src="/images/Screenshot 2024-10-06 231809.png"
-                  alt="Fatima Zehra Logo"
-                  className="logo-img"
-                />
-                <span className="decorator decorator-1"></span>
-                <span className="decorator decorator-2"></span>
-              </div>
-            </Link>
-          </div>
-
-          {/* Bismillah Image in the Center */}
-          <div className="center-prayer">
+          <Link href="/">
             <img
-              src="/images/Screenshot 2024-10-08 135902.png"
-              alt="Bismillah Calligraphy"
-              className="prayer-img rounded-lg"
+              src="/images/Screenshot 2024-10-06 231809.png"
+              alt="Fatima Zehra Logo"
+              className="logo-img animated-logo" // Added class for animation
             />
-          </div>
+          </Link>
+        </div>
+
+        {/* Bismillah Image in the Center */}
+        <div className="center-prayer">
+          <img
+            src="/images/Screenshot 2024-10-08 135902.png"
+            alt="Bismillah Calligraphy"
+            className="prayer-img rounded-lg"
+          />
         </div>
 
         {/* Navigation Links */}
@@ -95,7 +89,93 @@ export default function Header({ className }) { // Accept className as a prop
       </nav>
 
       <style jsx>{`
-        /* Your existing CSS styles here */
+        header {
+          background-color: #004080; /* Dark blue background */
+          padding: 20px 0; /* Padding for spacing */
+          margin-top: 20px; /* Space from the top */
+        }
+        .navbar {
+          display: flex;
+          align-items: center;
+          justify-content: space-between; /* Space between logo, center, and menu */
+          max-width: 1200px;
+          margin: 0 auto; /* Center the navbar */
+          width: 90%; /* Full width */
+        }
+        .logo-container {
+          flex: 1; /* Logo on the left */
+        }
+        .logo-img {
+          height: 100px; /* Increased size */
+          width: 100px; /* Increased size */
+          border-radius: 50%; /* Circular logo */
+          transition: transform 0.6s ease; /* Animation transition */
+        }
+        .animated-logo:hover {
+          animation: rotate 2s infinite linear; /* Circular rotation */
+        }
+        @keyframes rotate {
+          0% {
+            transform: rotate(0deg);
+          }
+          100% {
+            transform: rotate(360deg);
+          }
+        }
+        .center-prayer {
+          flex: 2; /* Center image */
+          text-align: center; /* Center text */
+        }
+        .prayer-img {
+          height: 80px; /* Adjust size of Bismillah image */
+          width: auto;
+        }
+        .menu {
+          flex: 1; /* Menu on the right */
+          text-align: right; /* Align menu items to the right */
+        }
+        .menu ul {
+          display: flex;
+          list-style: none;
+          margin: 0;
+          padding: 0;
+          justify-content: flex-end; /* Align menu items to the right */
+        }
+        .menu ul li {
+          margin-left: 20px; /* Space between items */
+          background-color: white; /* White background for links */
+          border-radius: 5px; /* Rounded corners */
+          padding: 10px 15px; /* Padding for box appearance */
+          transition: background-color 0.3s ease; /* Smooth transition */
+        }
+        .menu a {
+          color: #004080; /* Dark blue text color */
+          text-decoration: none; /* Remove underline */
+        }
+        .menu ul li:hover {
+          background-color: #e2e8f0; /* Light grey on hover */
+        }
+        /* Dropdown Menu Styles */
+        .dropdown-menu {
+          position: absolute;
+          background: #0056b3; /* Darker background for dropdown */
+          padding: 10px;
+          border-radius: 5px;
+          display: flex;
+          flex-direction: column; /* Stack dropdown items */
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow for dropdown */
+          z-index: 10; /* Ensure dropdown is above other content */
+        }
+        .dropdown-menu li {
+          margin: 5px 0; /* Space between dropdown items */
+        }
+        .dropdown-menu a {
+          padding: 8px 15px; /* Padding for dropdown items */
+          color: #ffffff; /* White text color */
+        }
+        .dropdown-menu a:hover {
+          background-color: #0062cc; /* Change background on hover */
+        }
       `}</style>
     </header>
   );

@@ -5,7 +5,6 @@ export default function Footer() {
     <footer className="footer">
       <div className="container mx-auto py-8 px-5 flex items-center sm:flex-row flex-col">
         <a href="/" className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
-          {/* Updated Logo with Fatima Zehra Logo */}
           <div className="logo-container-footer">
             <img
               src="/images/Screenshot 2024-10-06 231809.png"
@@ -28,57 +27,24 @@ export default function Footer() {
         </p>
         <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
           <a className="text-gray-500 hover:text-indigo-500" href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
-            <svg
-              fill="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              className="w-5 h-5"
-              viewBox="0 0 24 24"
-            >
+            <svg fill="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} className="w-5 h-5" viewBox="0 0 24 24">
               <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
             </svg>
           </a>
           <a className="ml-3 text-gray-500 hover:text-indigo-500" href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
-            <svg
-              fill="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              className="w-5 h-5"
-              viewBox="0 0 24 24"
-            >
+            <svg fill="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} className="w-5 h-5" viewBox="0 0 24 24">
               <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" />
             </svg>
           </a>
           <a className="ml-3 text-gray-500 hover:text-indigo-500" href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
-            <svg
-              fill="none"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              className="w-5 h-5"
-              viewBox="0 0 24 24"
-            >
+            <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} className="w-5 h-5" viewBox="0 0 24 24">
               <rect width={20} height={20} x={2} y={2} rx={5} ry={5} />
               <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01" />
             </svg>
           </a>
           <a className="ml-3 text-gray-500 hover:text-indigo-500" href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
-            <svg
-              fill="currentColor"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={0}
-              className="w-5 h-5"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke="none"
-                d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"
-              />
+            <svg fill="currentColor" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={0} className="w-5 h-5" viewBox="0 0 24 24">
+              <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" />
               <circle cx={4} cy={4} r={2} stroke="none" />
             </svg>
           </a>
@@ -89,7 +55,7 @@ export default function Footer() {
         .footer {
           background-color: #1f2937;
           color: #fff;
-          padding: 20px 0; /* Added padding for more spacing in the footer */
+          padding: 20px 0;
         }
         .logo-container-footer {
           position: relative;
@@ -98,11 +64,11 @@ export default function Footer() {
           transform-style: preserve-3d;
         }
         .logo-img {
-          height: 60px; /* Increased size for better visibility in footer */
+          height: 60px;
           width: 60px;
           border-radius: 50%;
           object-fit: cover;
-          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Shadow for better visual depth */
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         }
         .footer a {
           text-decoration: none;

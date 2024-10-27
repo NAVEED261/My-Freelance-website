@@ -1,4 +1,5 @@
 "use client";
+
 import React from 'react';
 import { Box, Heading, Text, VStack, Image, useColorModeValue } from "@chakra-ui/react";
 import Header from '../component/navbar'; // Update the path according to your project structure
@@ -10,7 +11,8 @@ export default function About() {
 
   return (
     <Box bg={bgColor} color={textColor} p={10} borderRadius="md" boxShadow="lg" maxW="1200px" mx="auto" mt={10}>
-      <Header />
+      <Header className="navbar" /> {/* Added className prop here */}
+
       <VStack align="start" spacing={8} mt={8}>
         {/* About Header */}
         <Box bg="blue.900" color="white" p={8} borderRadius="md" textAlign="center" w="full">
@@ -44,7 +46,7 @@ export default function About() {
         <Box bg="white" p={8} borderRadius="md" boxShadow="lg" w="full" _hover={{ boxShadow: "xl", transform: "translateY(-5px)" }} transition="all 0.3s ease">
           <Heading as="h2" size="lg" color={headingColor} mb={4}>Our Vision</Heading>
           <Text fontSize="lg" lineHeight="tall">
-            At Fatima Zehra StenoWeb Dynamics, we are committed to transforming your ideas into reality with innovative web solutions. Our vision is to empower businesses and individuals by providing top-notch web dev-elopment, design, and automation services that are not only efficient but also scalable.
+            At Fatima Zehra StenoWeb Dynamics, we are committed to transforming your ideas into reality with innovative web solutions. Our vision is to empower businesses and individuals by providing top-notch web development, design, and automation services that are not only efficient but also scalable.
           </Text>
         </Box>
 
@@ -52,7 +54,7 @@ export default function About() {
         <Box bg="white" p={8} borderRadius="md" boxShadow="lg" w="full" _hover={{ boxShadow: "xl", transform: "translateY(-5px)" }} transition="all 0.3s ease">
           <Heading as="h2" size="lg" color={headingColor} mb={4}>Our Services</Heading>
           <Text fontSize="lg" lineHeight="tall" mb={4}>
-            We specialize in delivering a wide range of services that cater to your unique needs. Whether youa re looking to build a brand-new website or enhance your existing one, our team of experts is here to assist you every step of the way. Here is what we offer:
+            We specialize in delivering a wide range of services that cater to your unique needs. Whether you are looking to build a brand-new website or enhance your existing one, our team of experts is here to assist you every step of the way. Here is what we offer:
           </Text>
           <VStack align="start" spacing={3} pl={5}>
             <Text as="li"><strong>Website Development:</strong> Creating responsive, user-friendly websites tailored to your business needs, ensuring a seamless experience across all devices.</Text>

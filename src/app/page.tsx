@@ -8,9 +8,52 @@ import Statistics from './(group)/statistics/page';
 import Source from './(group)/source/page';
 
 export default function Home() {
+  const services = [
+    {
+      title: 'Web Development',
+      description: 'We create responsive, modern websites that help your business grow. From concept to launch, we\'ve got you covered.',
+      link: '/solutions/web-development',
+    },
+    {
+      title: 'UI/UX Design',
+      description: 'Crafting visually appealing and user-friendly interfaces that deliver a seamless experience to your users.',
+      link: '/solutions/ui-ux-design',
+    },
+    {
+      title: 'Automation Services',
+      description: 'Streamlining your business processes with custom automation solutions using tools like Google Sheets and Zapier.',
+      link: '/solutions/automation',
+    },
+    {
+      title: 'Full-Stack Development',
+      description: 'Comprehensive full-stack solutions using the latest technologies for end-to-end development.',
+      link: '/solutions/full-stack-development',
+    },
+    {
+      title: 'GPT Expertise',
+      description: 'Leveraging the power of GPT models for creating advanced AI-driven solutions tailored to your business needs.',
+      link: '/solutions/gpt-expertise',
+    },
+    {
+      title: 'Stenography',
+      description: 'Providing stenography solutions for swift and efficient documentation, tailored to your specific requirements.',
+      link: '/solutions/stenography',
+    },
+    {
+      title: 'Economics Research',
+      description: 'In-depth economic research and analysis to help businesses make informed decisions.',
+      link: '/solutions/economics-research',
+    },
+    {
+      title: 'Malir Development Authority (MDA) Documentation',
+      description: 'Comprehensive documentation services for all public housing schemes under Malir Development Authority.',
+      link: '/solutions/mda',
+    },
+  ];
+
   return (
     <div className="home-container">
-      <Header className="navbar" /> {/* Ensure Header accepts className prop */}
+      <Header className="navbar" />
 
       {/* Video Background */}
       <div className="video-background">
@@ -58,7 +101,7 @@ export default function Home() {
 
         /* Video Background Styles */
         .video-background {
-          position: fixed; /* Changed to fixed for full coverage */
+          position: fixed;
           top: 0;
           left: 0;
           width: 100%;
@@ -85,14 +128,14 @@ export default function Home() {
           left: 0;
           width: 100%;
           height: 100%;
-          background: rgba(255, 255, 255, 0.1); /* Very light overlay */
+          background: rgba(255, 255, 255, 0.1);
           z-index: 0;
         }
 
         .main-content {
           text-align: center;
-          padding: 20px; /* Adjusted padding */
-          background: rgba(255, 255, 255, 0.85); /* Made more transparent */
+          padding: 20px;
+          background: rgba(255, 255, 255, 0.85);
           backdrop-filter: blur(10px);
           box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
           border-radius: 30px;
@@ -123,8 +166,8 @@ export default function Home() {
         .service-grid {
           display: grid;
           grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-          gap: 20px; /* Adjusted gap */
-          margin: 20px; /* Adjusted margin */
+          gap: 20px;
+          margin: 20px;
         }
 
         .service-item {
@@ -156,54 +199,11 @@ export default function Home() {
         .service-item p {
           color: #475569;
           line-height: 1.6;
-          flex-grow: 1; /* Allows description to take remaining space */
-        }
-
-        /* Updated Navbar Styles */
-        .navbar {
-          width: calc(100% - 10rem); /* Adjusted for outer spacing */
-          margin: 2.5rem auto; /* Space from the top */
-          padding: 1.5rem 2rem; /* Increased padding for larger size */
-          border-radius: 25px; /* Rounded corners */
-          background: rgba(255, 255, 255, 0.95); /* Background color */
-          backdrop-filter: blur(10px); /* Background blur effect */
-          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Shadow for depth */
-          position: sticky; /* Sticks to the top */
-          top: 20px; /* Distance from the top */
-          z-index: 100; /* Keep above other content */
-          transition: all 0.3s ease; /* Smooth transition */
-        }
-
-        /* Adjusting the navbar items */
-        .navbar ul {
-          display: flex; /* Flexbox for horizontal layout */
-          justify-content: space-between; /* Evenly space items */
-          list-style: none; /* Remove default list style */
-          padding: 0; /* Remove padding */
-          margin: 0; /* Remove margin */
-        }
-
-        /* Increase size and padding of navbar links */
-        .navbar a {
-          padding: 15px 20px; /* Increased padding */
-          font-size: 1.2em; /* Larger font size */
-          color: #0f172a; /* Text color */
-          text-decoration: none; /* Remove underline */
-        }
-
-        /* Hover effect for links */
-        .navbar a:hover {
-          background-color: rgba(255, 255, 255, 0.8); /* Light background on hover */
-          border-radius: 15px; /* Rounded corners on hover */
+          flex-grow: 1;
         }
 
         /* Responsive Design */
         @media (max-width: 1024px) {
-          .navbar {
-            width: calc(100% - 8rem);
-            padding: 1.5rem 2rem;
-          }
-
           .main-content h1 {
             font-size: 3em;
           }
@@ -214,11 +214,6 @@ export default function Home() {
         }
 
         @media (max-width: 768px) {
-          .navbar {
-            width: calc(100% - 5rem);
-            border-radius: 25px;
-          }
-
           .main-content {
             margin: 30px auto;
             padding: 30px 20px;
@@ -237,12 +232,6 @@ export default function Home() {
         }
 
         @media (max-width: 480px) {
-          .navbar {
-            width: calc(100% - 1rem);
-            padding: 0.8rem 1rem;
-            margin: 1rem auto;
-          }
-
           .main-content h1 {
             font-size: 2.2em;
           }
@@ -261,46 +250,3 @@ export default function Home() {
     </div>
   );
 }
-
-const services = [
-  {
-    title: 'Web Development',
-    description: 'We create responsive, modern websites that help your business grow. From concept to launch, we\'ve got you covered.',
-    link: '/solutions/web-development',
-  },
-  {
-    title: 'UI/UX Design',
-    description: 'Crafting visually appealing and user-friendly interfaces that deliver a seamless experience to your users.',
-    link: '/solutions/ui-ux-design',
-  },
-  {
-    title: 'Automation Services',
-    description: 'Streamlining your business processes with custom automation solutions using tools like Google Sheets and Zapier.',
-    link: '/solutions/automation',
-  },
-  {
-    title: 'Full-Stack Development',
-    description: 'Comprehensive full-stack solutions using the latest technologies for end-to-end development.',
-    link: '/solutions/full-stack-development',
-  },
-  {
-    title: 'GPT Expertise',
-    description: 'Leveraging the power of GPT models for creating advanced AI-driven solutions tailored to your business needs.',
-    link: '/solutions/gpt-expertise',
-  },
-  {
-    title: 'Stenography',
-    description: 'Providing stenography solutions for swift and efficient documentation, tailored to your specific requirements.',
-    link: '/solutions/stenography',
-  },
-  {
-    title: 'Economics Research',
-    description: 'In-depth economic research and analysis to help businesses make informed decisions. From market trends to policy impact assessments, we\'ve got you covered.',
-    link: '/solutions/economics-research',
-  },
-  {
-    title: 'Malir Development Authority (MDA) Documentation',
-    description: 'Comprehensive documentation services for all public housing schemes under Malir Development Authority, including allotment, transfer, mutation, and more.',
-    link: '/solutions/mda',
-  },
-];
