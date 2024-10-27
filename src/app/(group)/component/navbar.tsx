@@ -17,7 +17,6 @@ export default function Header() {
   return (
     <header>
       <nav>
-        {/* Container to hold logo and Bismillah Image */}
         <div className="logo-bismillah-container">
           {/* Logo on the Left Side */}
           <div className="logo">
@@ -99,7 +98,7 @@ export default function Header() {
         header {
           background-color: #1e3a8a;
           color: white;
-          padding: 30px 60px;
+          padding: 30px 60px; /* Increased padding */
           box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
           position: sticky;
           top: 0;
@@ -108,30 +107,29 @@ export default function Header() {
         nav {
           display: flex;
           align-items: center;
-          justify-content: space-between;
-          max-width: 1400px;
+          justify-content: space-between; /* Space between logo and menu */
+          max-width: 1400px; /* Set max width for the nav */
           margin: 0 auto;
-          padding: 0 30px;
+          padding: 0 30px; /* Adjust padding for side spacing */
+          width: calc(100% - 10rem); /* Ensure full width with margin */
         }
         .logo-bismillah-container {
           display: flex;
           align-items: center;
-          justify-content: flex-start;
+          justify-content: flex-start; /* Align logo and image properly to the left */
           flex: 2;
         }
         .logo {
-          margin-right: 40px;
+          margin-right: 40px; /* Space between logo and image */
         }
         .logo-container {
           position: relative;
           display: inline-block;
           transition: transform 1s ease;
-          transform-style: preserve-3d;
-          animation: rotateLogo 8s infinite linear;
+          animation: rotateLogo 8s infinite linear; /* Continuous rotation */
         }
         .logo-container:hover {
-          transform: rotateY(360deg) rotateX(360deg);
-          animation: none;
+          animation: none; /* Stop rotation on hover */
         }
         .logo-img {
           height: 150px;
@@ -140,62 +138,17 @@ export default function Header() {
           object-fit: cover;
           box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
         }
-        .decorator {
-          position: absolute;
-          border-radius: 50%;
-          transition: transform 0.3s ease-in-out;
-        }
-        .decorator-1 {
-          top: -15px;
-          left: -15px;
-          width: 200px;
-          height: 200px;
-          border: 3px solid #ffc107;
-          animation: decorator1Spin 5s infinite linear;
-        }
-        .decorator-2 {
-          bottom: -20px;
-          right: -20px;
-          width: 250px;
-          height: 250px;
-          border: 2px dashed #4ade80;
-          animation: decorator2Spin 7s infinite linear reverse;
-        }
         .center-prayer {
           text-align: center;
-          margin-left: auto;
+          margin-left: auto; /* Center the prayer image */
         }
         .prayer-img {
           height: 180px;
           object-fit: contain;
         }
-        @keyframes rotateLogo {
-          0% {
-            transform: rotateY(0deg) rotateX(0deg);
-          }
-          100% {
-            transform: rotateY(360deg) rotateX(360deg);
-          }
-        }
-        @keyframes decorator1Spin {
-          0% {
-            transform: rotate(0deg);
-          }
-          100% {
-            transform: rotate(360deg);
-          }
-        }
-        @keyframes decorator2Spin {
-          0% {
-            transform: rotate(0deg);
-          }
-          100% {
-            transform: rotate(-360deg);
-          }
-        }
         .menu {
           display: flex;
-          justify-content: flex-end;
+          justify-content: flex-end; /* Align menu items to the right */
           flex: 1;
         }
         .menu ul {
@@ -205,21 +158,17 @@ export default function Header() {
           padding: 0;
         }
         .menu ul li {
-          margin-left: 5rem;
+          margin-left: 5rem; /* Space between menu items */
           position: relative;
         }
         .menu ul li a {
           color: #f3f4f6;
           text-decoration: none;
-          font-size: 1.5em;
+          font-size: 1.5em; /* Font size increased */
           font-weight: bold;
-          padding: 10px 20px;
+          padding: 10px 20px; /* Padding increased */
           transition: color 0.3s ease, background-color 0.3s ease;
-          border-radius: 8px;
-        }
-        .menu ul li a:hover {
-          background-color: #2563eb;
-          color: #ffffff;
+          border-radius: 8px; /* Rounded corners */
         }
         .dropdown-menu {
           display: flex;
@@ -237,7 +186,7 @@ export default function Header() {
           z-index: 1000;
         }
         .dropdown-menu li {
-          margin: 5px 0; /* Add some space between dropdown items */
+          margin: 5px 0; /* Add space between dropdown items */
         }
         .dropdown-menu li a {
           display: block;
@@ -250,6 +199,28 @@ export default function Header() {
         .dropdown-menu li a:hover {
           background-color: #2563eb;
           color: #ffffff;
+        }
+
+        /* Animation for logo rotation */
+        @keyframes rotateLogo {
+          0% {
+            transform: rotateY(0deg);
+          }
+          100% {
+            transform: rotateY(360deg);
+          }
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+          nav {
+            flex-direction: column; /* Stack items vertically on small screens */
+            align-items: flex-start; /* Align left */
+          }
+          .menu ul {
+            flex-direction: column; /* Stack links vertically on small screens */
+            align-items: center; /* Center links */
+          }
         }
       `}</style>
     </header>

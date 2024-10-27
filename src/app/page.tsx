@@ -10,7 +10,7 @@ import Source from './(group)/source/page';
 export default function Home() {
   return (
     <div className="home-container">
-      <Header />
+      <Header className="navbar" /> {/* Ensure Header accepts className prop */}
 
       {/* Video Background */}
       <div className="video-background">
@@ -18,13 +18,16 @@ export default function Home() {
           <source src="/119195-716970703_small.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
+        
+        {/* Overlay for better text visibility */}
+        <div className="video-overlay"></div>
       </div>
 
       <main className="main-content">
         <HeroSection />
         <h1><br/><hr/>
           Welcome to Fatima Zehra StenoWeb Dynamics
-          </h1>
+        </h1>
         <p className="main-description text-color blue-900">Your Partner in Innovative Web Solutions and Automation Services</p>
 
         {/* Service Grid */}
@@ -38,7 +41,6 @@ export default function Home() {
             </Link>
           ))}
         </div>
-
       </main>
 
       <Statistics />
@@ -54,107 +56,205 @@ export default function Home() {
           overflow: hidden;
         }
 
-        /* Video Background */
+        /* Video Background Styles */
         .video-background {
+          position: fixed; /* Changed to fixed for full coverage */
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100vh;
+          overflow: hidden;
+          z-index: -1;
+        }
+
+        .background-video {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          min-width: 100%;
+          min-height: 100%;
+          width: auto;
+          height: auto;
+          z-index: -1;
+        }
+
+        .video-overlay {
           position: absolute;
           top: 0;
           left: 0;
           width: 100%;
           height: 100%;
-          overflow: hidden;
-          z-index: -1; /* Behind the content */
-        }
-
-        .background-video {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
+          background: rgba(255, 255, 255, 0.1); /* Very light overlay */
+          z-index: 0;
         }
 
         .main-content {
           text-align: center;
-          padding: 40px 20px;
-          background: rgba(255, 255, 255, 0.85);
+          padding: 20px; /* Adjusted padding */
+          background: rgba(255, 255, 255, 0.85); /* Made more transparent */
           backdrop-filter: blur(10px);
-          box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
-          border-radius: 20px;
-          margin: 40px auto;
-          max-width: 1000px;
+          box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+          border-radius: 30px;
+          margin: 60px auto;
+          max-width: 1200px;
           z-index: 1;
           position: relative;
         }
 
         .main-content h1 {
-          font-size: 3em;
-          margin-bottom: 20px;
-          color: #1e40af;
-          font-weight: 700;
-          letter-spacing: 1.5px;
-          background: linear-gradient(to right, #3b82f6, #1e40af);
+          font-size: 3.5em;
+          margin-bottom: 25px;
+          background: linear-gradient(45deg, #2563eb, #1e40af);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
+          font-weight: 800;
+          letter-spacing: 2px;
+          text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         .main-description {
-          font-size: 1.5em;
-          color: #e2e8f0; /* Updated to a lighter color for better visibility */
-          font-weight: 600;
+          font-size: 1.8em;
+          color: #334155;
+          font-weight: 700;
+          margin-bottom: 40px;
         }
 
         .service-grid {
           display: grid;
           grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-          gap: 40px;
-          margin-top: 40px;
-          margin-bottom: 40px;
-          text-align: left;
+          gap: 20px; /* Adjusted gap */
+          margin: 20px; /* Adjusted margin */
         }
 
         .service-item {
-          background-color: #f3f4f6;
-          padding: 25px;
-          border-radius: 15px;
-          box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          background: rgba(255, 255, 255, 0.9);
+          padding: 30px;
+          border-radius: 20px;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+          transition: all 0.3s ease;
           cursor: pointer;
-          height: 220px; /* Set consistent height for all service boxes */
           display: flex;
           flex-direction: column;
           justify-content: space-between;
+          border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .service-item:hover {
-          transform: translateY(-8px);
-          box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+          transform: translateY(-10px);
+          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+          background: rgba(255, 255, 255, 0.95);
         }
 
         .service-item h2 {
           font-size: 1.8em;
           margin-bottom: 15px;
-          color: #2563eb;
-          font-weight: 600;
+          color: #1e40af;
+          font-weight: 700;
         }
 
-        .cta-button {
-          background-color: #2563eb;
-          color: #ffffff;
-          padding: 15px 30px;
-          font-size: 1.4em;
-          border: none;
-          border-radius: 12px;
-          cursor: pointer;
-          transition: background-color 0.3s ease, transform 0.3s ease;
-          font-weight: 600;
+        .service-item p {
+          color: #475569;
+          line-height: 1.6;
+          flex-grow: 1; /* Allows description to take remaining space */
         }
 
-        .cta-button:hover {
-          background-color: #1e40af;
-          transform: translateY(-5px);
+        /* Updated Navbar Styles */
+        .navbar {
+          width: calc(100% - 10rem); /* Adjusted for outer spacing */
+          margin: 2.5rem auto; /* Space from the top */
+          padding: 1.5rem 2rem; /* Increased padding for larger size */
+          border-radius: 25px; /* Rounded corners */
+          background: rgba(255, 255, 255, 0.95); /* Background color */
+          backdrop-filter: blur(10px); /* Background blur effect */
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+          position: sticky; /* Sticks to the top */
+          top: 20px; /* Distance from the top */
+          z-index: 100; /* Keep above other content */
+          transition: all 0.3s ease; /* Smooth transition */
+        }
+
+        /* Adjusting the navbar items */
+        .navbar ul {
+          display: flex; /* Flexbox for horizontal layout */
+          justify-content: space-between; /* Evenly space items */
+          list-style: none; /* Remove default list style */
+          padding: 0; /* Remove padding */
+          margin: 0; /* Remove margin */
+        }
+
+        /* Increase size and padding of navbar links */
+        .navbar a {
+          padding: 15px 20px; /* Increased padding */
+          font-size: 1.2em; /* Larger font size */
+          color: #0f172a; /* Text color */
+          text-decoration: none; /* Remove underline */
+        }
+
+        /* Hover effect for links */
+        .navbar a:hover {
+          background-color: rgba(255, 255, 255, 0.8); /* Light background on hover */
+          border-radius: 15px; /* Rounded corners on hover */
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+          .navbar {
+            width: calc(100% - 8rem);
+            padding: 1.5rem 2rem;
+          }
+
+          .main-content h1 {
+            font-size: 3em;
+          }
+
+          .service-grid {
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+          }
         }
 
         @media (max-width: 768px) {
+          .navbar {
+            width: calc(100% - 5rem);
+            border-radius: 25px;
+          }
+
+          .main-content {
+            margin: 30px auto;
+            padding: 30px 20px;
+          }
+
           .service-grid {
             grid-template-columns: 1fr;
+            margin: 30px 10px;
+          }
+
+          .background-video {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .navbar {
+            width: calc(100% - 1rem);
+            padding: 0.8rem 1rem;
+            margin: 1rem auto;
+          }
+
+          .main-content h1 {
+            font-size: 2.2em;
+          }
+
+          .main-description {
+            font-size: 1.4em;
+          }
+
+          .service-item {
+            padding: 20px;
+            height: auto;
+            min-height: 200px;
           }
         }
       `}</style>

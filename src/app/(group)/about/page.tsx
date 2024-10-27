@@ -44,7 +44,7 @@ export default function About() {
         <Box bg="white" p={8} borderRadius="md" boxShadow="lg" w="full" _hover={{ boxShadow: "xl", transform: "translateY(-5px)" }} transition="all 0.3s ease">
           <Heading as="h2" size="lg" color={headingColor} mb={4}>Our Vision</Heading>
           <Text fontSize="lg" lineHeight="tall">
-            At Fatima Zehra StenoWeb Dynamics, we are committed to transforming your ideas into reality with innovative web solutions. Our vision is to empower businesses and individuals by providing top-notch web development, design, and automation services that are not only efficient but also scalable.
+            At Fatima Zehra StenoWeb Dynamics, we are committed to transforming your ideas into reality with innovative web solutions. Our vision is to empower businesses and individuals by providing top-notch web dev-elopment, design, and automation services that are not only efficient but also scalable.
           </Text>
         </Box>
 
